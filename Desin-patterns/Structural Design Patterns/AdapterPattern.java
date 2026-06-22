@@ -109,7 +109,7 @@ class PaymentAdapter implements Payment {
     }
 }
 
-public class AdapterDesignPattern {
+public class AdapterPattern {
 
     public static void main(String[] args) {
 
