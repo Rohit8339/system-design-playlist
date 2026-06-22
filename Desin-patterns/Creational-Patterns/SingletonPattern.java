@@ -1,17 +1,17 @@
 // Eager Initialization Singleton
 // Object is created when the class is loaded into memory.
-public class Singleton {
+public class SingletonPattern {
 
     // Object is created immediately
-    private static Singleton instance = new Singleton();
+    private static SingletonPattern instance = new SingletonPattern();
 
     // Private constructor prevents object creation using 'new'
-    private Singleton() {
+    private SingletonPattern() {
 
     }
 
     // Returns the already created object
-    public static Singleton getInstance() {
+    public static SingletonPattern getInstance() {
         return instance;
     }
 }
