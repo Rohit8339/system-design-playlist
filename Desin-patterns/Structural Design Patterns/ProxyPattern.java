@@ -76,8 +76,7 @@ interface VideoDownloader {
 }
 
 // Real Object
-class RealVideoDownloaderProxyTarget
-        implements VideoDownloader {
+class RealVideoDownloaderProxyTarget implements VideoDownloader {
 
     @Override
     public String downloadVideo(String url) {
@@ -93,8 +92,7 @@ class RealVideoDownloaderProxyTarget
 }
 
 // Proxy Object
-class CachedVideoDownloader
-        implements VideoDownloader {
+class CachedVideoDownloader implements VideoDownloader {
 
     // Real object
     private RealVideoDownloaderProxyTarget realVideoDownloader;
@@ -115,8 +113,7 @@ class CachedVideoDownloader
         // Check whether video already exists
         if (cache.containsKey(url)) {
 
-            System.out.println(
-                    "Returning Cached Video : " + url);
+            System.out.println("Returning Cached Video : " + url);
 
             return cache.get(url);
         }
@@ -138,14 +135,12 @@ public class ProxyPattern {
         VideoDownloader downloader = new CachedVideoDownloader();
 
         // First request
-        downloader.downloadVideo(
-                "https://getVideo/myVideo");
+        downloader.downloadVideo("https://getVideo/myVideo");
 
         System.out.println();
 
         // Second request
-        downloader.downloadVideo(
-                "https://getVideo/myVideo");
+        downloader.downloadVideo("https://getVideo/myVideo");
     }
 }
 
